@@ -31,8 +31,6 @@ public class Usuario {
         this.directorio=new ArrayList<Telefono>();
     }
 
-    
-    
     public String getCedula() {
         return cedula;
     }

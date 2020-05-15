@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package ec.edu.ups.test;
 
 import ec.edu.ups.controlador.ControladorTelefono;
@@ -26,7 +22,7 @@ public class Test {
         static UsuarioDao usuarioDao = new UsuarioDao();
         static TelefonoDao telefonoDao = new TelefonoDao();
         // controlador
-        static ControladorUsuario controladorUsuario = new ControladorUsuario(vistaU, usuarioDao, vistaT, telefonoDao);
+        static ControladorUsuario controladorUsuario = new ControladorUsuario(vistaU, usuarioDao, telefonoDao);
         static ControladorTelefono controladorTelefono = new ControladorTelefono(vistaT, telefonoDao);
     public static void main(String[] args) {
         
