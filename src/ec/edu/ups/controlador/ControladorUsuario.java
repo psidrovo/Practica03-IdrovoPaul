@@ -43,18 +43,44 @@ public class ControladorUsuario {
     public Usuario inicioSesion() {
         String credenciales = vistaUsuario.iniciarSesionUsuario();
         usuario = UDao.read(credenciales);
-        vistaUsuario.imprimirUsuario(usuario);
+        if(usuario!=null){
+            vistaUsuario.imprimirUsuario(usuario);
+        }
         return usuario;
     }
     
     //ejemplo de agregacion
     public void agregarTelefono(int codigo){
-        //int codigo = vistaTelefono.buscarTelefono();
         telefono = TDao.read(codigo);
         usuario.agregarTelefono(telefono);
         UDao.update(usuario);        
     }
     
+    public void actualizarTelefono(int codigo){
+        telefono = TDao.read(codigo);
+        usuario.agregarTelefono(telefono);
+        UDao.update(usuario);        
+    }
+    
+    public void eliminarTelefono(int codigo){
+        telefono = TDao.read(codigo);
+        usuario.eliminarTelefono(telefono);
+        UDao.update(usuario);        
+    }
+    public void verTelefonoCodigo(){
+        vistaUsuario.imprimirTelefono(usuario);
+    }
+    public void verTelefonos(){
+        vistaUsuario.imprimirUsuarioTelefonos(usuario);
+    }
+    public void verTelefonosCorreo(){
+        String credencial = vistaUsuario.imprimirUsuarioTelefonos();
+        usuario = UDao.telefonos(credencial);
+        if(usuario!=null){
+            verTelefonos();
+        }
+        
+    }
     public void verUsuario(){
         vistaUsuario.imprimirUsuario(usuario);
     }

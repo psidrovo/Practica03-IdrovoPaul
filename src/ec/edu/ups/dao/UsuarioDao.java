@@ -8,6 +8,7 @@ package ec.edu.ups.dao;
 import ec.edu.ups.idao.IUsuario;
 import ec.edu.ups.modelo.Usuario;
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.Map;
 
 /**
@@ -38,6 +39,18 @@ public class UsuarioDao implements IUsuario{
     public void update(Usuario usuario) {
         String key = usuario.getCorreo()+usuario.getContrasena();
         mapaUsuario.put(key, usuario);
+    }
+
+    @Override
+    public Usuario telefonos(String correo) {
+        Iterator it = mapaUsuario.values().iterator();
+        while(it.hasNext()){
+            Usuario us = (Usuario) it.next();
+            if(us.getCorreo()==correo){
+                return us;
+            }
+        }
+        return null;
     }
     
     

@@ -39,19 +39,21 @@ public class ControladorTelefono {
     }
 
     //llama al DAO para actualizar telefono
-    public void actualizar() {
+    public int actualizar() {
         telefono = vistaTelefono.editarTelefono();
         TDao.update(telefono);
+        return telefono.getCodigo();
     }
 
     //llama al DAO para eliminar un cliente
-    public void eliminar() {
+    public int eliminar() {
         telefono = vistaTelefono.eliminarTelefono();
         TDao.delete(telefono.getCodigo());
+        return telefono.getCodigo();
     }
 
     //llama al DAO para obtener todos telefonos
-    public void verDirecciones() {
+    public void verTelefonos() {
         List<Telefono> telefonos;
         telefonos = TDao.todosTelefonos();
         vistaTelefono.verTelefonos(telefonos);

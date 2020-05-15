@@ -16,6 +16,6 @@ public interface ITelefono {
     public void create(Telefono telefono);
     public Telefono read(int codigo);
     public void update(Telefono telefono);
-    public boolean delete(int codigo);   
+    public void delete(int codigo);   
     public List<Telefono> todosTelefonos();
 }

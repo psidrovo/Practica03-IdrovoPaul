@@ -16,4 +16,5 @@ public interface IUsuario {
     public void create(Usuario usuario);
     public Usuario read(String credenciales);
     public void update(Usuario usuario);
+    public Usuario telefonos(String correo);
 }

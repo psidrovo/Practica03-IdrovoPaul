@@ -42,10 +42,8 @@ public class TelefonoDao implements ITelefono{
     }
 
     @Override
-    public boolean delete(int codigo) {
-        boolean existe = mapaTelefono.containsKey(codigo);
+    public void delete(int codigo) {
         mapaTelefono.remove(codigo);
-        return existe;
     }
 
     @Override

@@ -40,4 +40,24 @@ public class VistaUsuario {
     public void imprimirUsuario(Usuario Usuario) {
         System.out.println("SUS DATOS SON: \n" + Usuario.toString());
     }
+    
+    public void imprimirTelefono(Usuario Usuario) {
+        System.out.println("Ingrese el codigo del telefono");
+        int codigo = validarInt();
+        if(Usuario.buscar(codigo)!=null){
+            System.out.println("Su Telefono es: \n" + Usuario.buscar(codigo).toString());
+        }else{
+            System.out.println("No esxiste un telefono con el odigo "+codigo);
+        }
+    }
+    
+    public void imprimirUsuarioTelefonos(Usuario Usuario) {
+        System.out.println("SUS TELEFONOS SON: \n" + Usuario.getDirectorio().toString());
+    }
+    
+    public String imprimirUsuarioTelefonos() {
+        System.out.println("Ingrese el correo del usuario");
+        String credencial = validarString();
+        return credencial;
+    }
 }

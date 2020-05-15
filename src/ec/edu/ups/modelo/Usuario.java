@@ -73,6 +73,10 @@ public class Usuario {
         this.contrasena = contrasena;
     }
 
+    public List<Telefono> getDirectorio() {
+        return directorio;
+    }
+    
     //métodos de la agregación
     public void agregarTelefono(Telefono telefono) {
         directorio.add(telefono);
