@@ -1,11 +1,7 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package ec.edu.ups.modelo;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Objects;
 
@@ -77,6 +73,43 @@ public class Usuario {
         this.contrasena = contrasena;
     }
 
+    //métodos de la agregación
+    public void agregarTelefono(Telefono telefono) {
+        directorio.add(telefono);
+    }
+
+    public void actualizarTelefono(Telefono telefono) {
+        //El contains busca un telefono por su codigo mediante el equals
+        if (directorio.contains(telefono)) {
+            //El indexof busca la pocicion de un telefono por su codigo mediante el equals
+            int index = directorio.indexOf(telefono);
+            directorio.set(index, telefono);
+        }
+    }
+
+    public void eliminarTelefono(Telefono telefono) {
+        if (directorio.contains(telefono)) {
+            int index = directorio.indexOf(telefono);
+            directorio.remove(index);
+        }
+    }
+
+    public List<Telefono> listar() {
+        return directorio;
+    }
+
+    public Telefono buscar(int codigo) {
+        Iterator it = directorio.iterator();
+        while(it.hasNext()){
+            Telefono tf = (Telefono)it.next();
+            if(tf.getCodigo()==codigo){
+                return tf;
+            }
+        }
+        return null;
+    }
+    
+    
     @Override
     public int hashCode() {
         int hash = 5;
