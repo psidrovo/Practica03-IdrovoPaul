@@ -1,7 +1,6 @@
 
 package ec.edu.ups.vista;
 
-import ec.edu.ups.modelo.Telefono;
 import ec.edu.ups.modelo.Usuario;
 import static ec.edu.ups.modelo.ValidarDatos.*;
 
@@ -28,20 +27,17 @@ public class VistaUsuario {
         return usRegistro;
     }
 
-    public int buscarCliente() {
-        entrada = new Scanner(System.in);
-        System.out.println("Ingresa el id del cliente a buscar");
-        int id = entrada.nextInt();
-        return id;
+    public String iniciarSesionUsuario() {
+        String credencial;
+        System.out.println("***INICIO DE SESION***");
+        System.out.println("Ingrese su correo");
+        credencial = validarString();
+        System.out.println("Ingrese su contraseña"); 
+        credencial=credencial+validarString();
+        return credencial;
     }
 
-    public void verCliente(Cliente cliente) {
-        System.out.println("Datos del Cliente: " + cliente);
-    }
-
-    public void verClientes(List<Cliente> clientes) {
-        for (Cliente cliente : clientes) {
-            System.out.println("Datos del Cliente: " + cliente);
-        }
+    public void imprimirUsuario(Usuario Usuario) {
+        System.out.println("SUS DATOS SON: \n" + Usuario.toString());
     }
 }
