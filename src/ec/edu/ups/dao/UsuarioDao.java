@@ -42,7 +42,7 @@ public class UsuarioDao implements IUsuario{
         Iterator it = mapaUsuario.values().iterator();
         while(it.hasNext()){
             Usuario us = (Usuario) it.next();
-            if(us.getCorreo()==correo){
+            if(us.getCorreo().equals(correo)){
                 return us;
             }
         }
