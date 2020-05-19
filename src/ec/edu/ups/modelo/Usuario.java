@@ -89,11 +89,18 @@ public class Usuario {
         }
     }
 
-    public void eliminarTelefono(Telefono telefono) {
-        if (directorio.contains(telefono)) {
+    public void eliminarTelefono(int codigo) {
+        for(int i=0;i<directorio.size();i++){
+            if(directorio.get(i).getCodigo()==codigo){
+                directorio.remove(i);
+            }
+        }
+        /*
+        if (directorio.) {
             int index = directorio.indexOf(telefono);
             directorio.remove(index);
         }
+        */
     }
 
     public List<Telefono> listar() {

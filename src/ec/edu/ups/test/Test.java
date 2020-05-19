@@ -16,16 +16,16 @@ import ec.edu.ups.vista.VistaUsuario;
  */
 public class Test {
         // vista
-        static VistaUsuario vistaU = new VistaUsuario();
-        static VistaTelefono vistaT = new VistaTelefono();
-        //DAOs
-        static UsuarioDao usuarioDao = new UsuarioDao();
-        static TelefonoDao telefonoDao = new TelefonoDao();
-        // controlador
-        static ControladorUsuario controladorUsuario = new ControladorUsuario(vistaU, usuarioDao, telefonoDao);
-        static ControladorTelefono controladorTelefono = new ControladorTelefono(vistaT, telefonoDao);
-    public static void main(String[] args) {
-        
+    static VistaUsuario vistaU = new VistaUsuario();
+    static VistaTelefono vistaT = new VistaTelefono();
+    //DAOs
+    static UsuarioDao usuarioDao = new UsuarioDao();
+    static TelefonoDao telefonoDao = new TelefonoDao();
+    // controlador
+    static ControladorUsuario controladorUsuario = new ControladorUsuario(vistaU, usuarioDao, telefonoDao);
+    static ControladorTelefono controladorTelefono = new ControladorTelefono(vistaT, telefonoDao);
+    
+    public static void main(String[] args) {        
 
         boolean inicio=true;
         while(inicio){

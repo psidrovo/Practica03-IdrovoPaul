@@ -130,8 +130,7 @@ public class ControladorUsuario {
      * @param codigo 
      */
     public void eliminarTelefono(int codigo){
-        telefono = TDao.read(codigo);
-        usuario.eliminarTelefono(telefono);
+        usuario.eliminarTelefono(codigo);
         UDao.update(usuario);        
     }
     /**
